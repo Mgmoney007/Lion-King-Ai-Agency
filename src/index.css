@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap');
+
+@layer base {
+  body {
+    @apply antialiased selection:bg-[#f4c400]/30;
+  }
+}
+
+@keyframes float-cinematic {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0) rotate(0deg); }
+  33% { transform: translate(-50%, -50%) translateY(-8px) rotate(1deg); }
+  66% { transform: translate(-50%, -50%) translateY(4px) rotate(-1deg); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+@keyframes orbit-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-float-cinematic {
+  animation: float-cinematic var(--duration, 8s) ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+@keyframes heroSweep {
+  0% { transform: translateX(-180%) rotate(8deg); opacity: 0; }
+  18% { opacity: 0.22; }
+  50% { transform: translateX(520%) rotate(8deg); opacity: 0.16; }
+  100% { transform: translateX(520%) rotate(8deg); opacity: 0; }
+}
+
+.animate-hero-sweep {
+  animation: heroSweep 7s ease-in-out infinite;
+}
